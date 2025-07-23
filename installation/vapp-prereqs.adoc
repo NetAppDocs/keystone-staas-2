@@ -1,0 +1,25 @@
+---
+sidebar: sidebar
+permalink: installation/vapp-prereqs.html
+keywords: prerequisites, VMware vSphere, vApp
+summary: Your VMware vSphere system must meet several requirements before you can install Keystone Collector.
+---
+
+= Virtual infrastructure requirements
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Your VMware vSphere system must meet several requirements before you can install Keystone Collector.
+
+.Prerequisites for the Keystone Collector server VM:
+
+* Operating system: VMware vCentre server and ESXi 6.7 or later
+* Core: 1 CPU
+* RAM: 2 GB RAM
+* Disk space: 20 GB vDisk
+
+include::../_include/generic-prereqs.adoc[]

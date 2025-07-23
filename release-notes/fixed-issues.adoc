@@ -1,0 +1,133 @@
+---
+sidebar: sidebar
+permalink: release-notes/fixed-issues.html
+keywords: fixed issues
+summary: Issues that were found in previous releases of NetApp Keystone STaaS services have been fixed in later releases.
+---
+
+= Fixed issues in Keystone STaaS
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Issues that were found in previous releases of NetApp Keystone STaaS services have been fixed in later releases.
+
+[cols="3*",options="header"]
+|===
+|Issue description |After the fix |Fixed in release
+
+a|In the *Assets* tab, assets for StorageGRID are not visible.
+a|Fixed
+a|June 19, 2025
+//NSEKEY-15531
+a|For the Advance Data-Protect service level, in the *Consumption Trend* tab, the chart shows a split for primary and mirror sites.
+a|The chart no longer shows a split for primary and mirror sites.
+a|June 19, 2025
+//NSEKEY-14973
+a|When the existing Keystone Collector installed using a Debian package attempts to configure an HTTP Proxy or enable Unified Manager through the Keystone Collector management TUI, the TUI becomes unresponsive.
+a|Fixed
+a|May 19, 2025
+//NSEKEY-15418
+a|Keystone Collector for StorageGRID fails to configure correctly due to missing common settings.
+a|Fixed
+a|May 12, 2025
+//NSEKEY-14719
+a|Keystone Collector fails to collect usage data for ONTAP clusters running versions lower than 9.11.
+a|Fixed
+a|April 30, 2025
+//NSEKEY-15020
+a|The consumption values for linked subscriptions show incorrect negative numbers, causing the total committed usage to display inaccurately high.
+a|Fixed
+a|April 14, 2025
+//NSEKEY-14547
+a|Unable to view historical data in the *Consumption Trend* tab for service levels for a few subscriptions.
+a|Fixed
+a|April 14, 2025
+//NSEKEY-14531
+a|Missing *Keystone Subscriptions* option from *Watchlist* and the *Subscription Number* option from *Reports* on the Digital Advisor dashboard.
+a|Fixed
+a|March 19, 2025
+//NSEKEY-12886, NSEKEY-12894
+a|Missing a few Keystone subscriptions from *Watchlist* after creating or modifying watchlist from the Digital Advisor dashboard.
+a|Fixed
+a|March 19, 2025
+//NSEKEY-12948
+a|Unable to view historical data in the *Consumption Trend* tab for service levels associated with a subscription that has expired and been renewed with the same tracking ID but different service levels.
+a|Fixed
+a|March 19, 2025    
+//NSEKEY-13028, NSEKEY-11912
+a|Unable to generate reports for subscriptions when selecting more than 10-12 subscriptions from the *Subscriptions* tab on the *Keystone Subscriptions* page.
+a|Fixed
+a|January 08, 2025
+//NSEKEY-11636
+a|The *Volume Summary* sub-tab in the *Volumes & Objects* tab fails to load for StorageGrid subscriptions.
+a|Fixed
+a|November 21, 2024
+//NSEKEY-11567
+a|The *From Date* field to select the date range displays a future date by default when navigating to the *Consumption Trend* tab.
+a|Fixed
+a|September 04, 2024
+//NSEKEY-10305
+a|Keystone Collector management TUI becomes unresponsive when setting up AQoS policies.
+a|Fixed
+a|August 07, 2024
+//NSEKEY-10066
+a|Usage charts display data beyond the specified single-day period when the date corresponding to the current day is selected as both the start and end date for the previous month from the *Capacity Trend* option in the *Capacity Trends* tab.
+a|Usage charts now correctly display data for the specified single-day period.
+a|June 27, 2024
+//NSEKEY-9842
+a|Historical accrued burst data is not available for *CVO Primary* and *CVO Secondary* service levels within the *Capacity Trend* tab for subscriptions that are not configured with a MetroCluster configuration.
+a|Fixed
+a|June 21, 2024
+//NSEKEY-9855
+a|Incorrect display of object storage consumed value listed on the *Volume Details* tab for AutoSupport subscriptions.
+a|The consumed value for object storage now displays correctly.
+a|June 21, 2024
+//NSEKEY-9265
+a|Unable to view cluster-level information within the *Assets* tab for AutoSupport subscriptions that are configured with a MetroCluster configuration.
+a|Fixed
+a|June, 21, 2024
+//NSEKEY-9862
+a|Misplacement of Keystone data in CSV reports if the *Account Name* column in CSV reports, generated from the *Capacity Trend* tab, includes an account name with a comma `(,)`.
+a|Keystone data is correctly aligned in CSV reports.
+a|May 29, 2024
+a|Display the accrued burst usage from the the *Capacity Trend* tab even if the consumption is below the committed capacity.
+a|Fixed
+a|May 29, 2024
+a|Incorrect tooltip text for the *Current Burst* index icon in the *Capacity Trend* tab.
+a|Displays the correct tooltip text "_The amount of burst capacity currently being consumed. Note this is for current billing period, not the selected date range._"
+a|March 28, 2024
+a|Information on AQoS non-compliant volumes and MetroCluster partners is unavailable for AutoSupport subscriptions if Keystone data is not present for 24 hours.
+a|Fixed
+a|March 28, 2024
+a|Occasional mismatch in the number of AQoS non-compliant volumes listed on the *Volume Summary* and *Volume Details* tabs if there are two service levels assigned to a volume that fulfils AQoS compliance for only one service level.
+a|Fixed
+a|March 28, 2024
+a|No information is available on the *Assets* tab for AutoSupport subscriptions.
+a|Fixed
+a|March 14, 2024
+a|If both MetroCluster and FabricPool were enabled in an environment where rate plans for both tiering and object storage were applicable, the service levels could be incorrectly derived for the mirror volumes (both constituent and FabricPool volumes).
+a|Correct service levels are applied to mirror volumes.
+a|February 29, 2024
+a|For some subscriptions having a single service level or rate plan, the AQoS compliance column was missing in the CSV output of the *Volumes* tab reports.
+a|The compliance column is visible in the reports.
+a|February 29, 2024
+a|In some MetroCluster environments, occasional anomaly was detected in the IOPS density charts in the *Performance* tab. This happened due to inaccurate mapping of volumes to service levels.
+a|The charts are correctly displayed.
+a|February 29, 2024
+a|The usage indicator for a burst consumption record was being displayed in amber.
+a|The indicator appears in red.
+a|December 13, 2023
+a|The date range and data in the Capacity Trend, Current Usage, and Performance tabs were not converted to UTC timezone.
+a|The date range for query and data in all the tabs are displayed in UTC time (server timezone). The UTC timezone is also displayed against each date field on the tabs.
+a|December 13, 2023
+a|There was a mismatch in the start date and end date between the tabs and the downloaded CSV reports.
+a|Fixed.
+a|December 13, 2023
+
+
+
+|===

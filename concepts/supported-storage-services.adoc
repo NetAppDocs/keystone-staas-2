@@ -1,0 +1,59 @@
+---
+sidebar: sidebar
+permalink: concepts/supported-storage-services.html
+keywords: storage, service, service definition, keystone STaaS services,
+summary: Keystone STaaS services supports ONTAP and StorageGRID.
+---
+
+= Supported storage in Keystone
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Keystone STaaS services for version 3 (v3) support unified, block-optimized, and object storage of NetApp, and Cloud Volumes ONTAP.
+
+Each storage type includes:
+
+* *Unified storage*: Includes both file, block, and S3 object storage, available on NetApp ONTAP AFF as well as FAS systems.
+* *Block optimized storage*: Includes block storage available on NetApp ONTAP ASA systems.
+* *Object storage*: Includes object storage available on NetApp StorageGRID systems.
+
+Keystone STaaS provides standard and optional services for your storage. 
+
+*Keystone STaaS standard services*: Standard services are included within the base subscription and are not charged separately.
+
+*Keystone STaaS add-on services*: These are optional, chargeable services that provide additional utilities and benefits on top of standard Keystone STaaS subscription services.
+
+Keystone STaaS services can be used at the same time. For example, a cloud storage subscription can have the same term as unified, block-optimized, and object storage subscriptions. A cloud service can be included at any point during the service term of an existing storage subscription. However, if you do not plan to renew an existing unified, block-optimized, or object storage subscription, a cloud storage subscription cannot be added during the last 90 days of the subscription.
+
+== Services for unified, block-optimized, and object storage
+Keystone STaaS services for unified, block-optimized, and object storage, support multiple features and protocols, and described in the following table:
+
+|===
+a| Storage |Platform |Protocols |Supported features
+
+a|Unified storage
+a|ONTAP
+a|NFS and CIFS
+a|Supports all ONTAP One features
+a|Block optimized storage
+a|ONTAP
+a|FC and iSCSI 
+a|Supports all ONTAP One features
+a| Object storage
+a|StorageGRID
+a|S3
+a|Supports all ONTAP One features
+
+|===
+
+To learn more about ONTAP One, refer to link:https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html#licenses-included-with-ontap-one[ONTAP licensing overview^] and link:https://www.netapp.com/blog/ontap-one/[ONTAP One: The full power of ONTAP, now all in one^].
+
+== Services for cloud storage
+Keystone STaaS provides cloud storage services. Keystone STaaS supports Cloud Volumes ONTAP data management capabilities on Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform. 
+
+[NOTE]
+Hyperscalar-based compute, storage, and network services required by Cloud Volumes ONTAP are not provided by NetApp as a part of Keystone STaaS subscriptions; these subscriptions need to be procured directly from hyperscalar cloud service providers.
