@@ -1,0 +1,41 @@
+---
+sidebar: sidebar
+permalink: release-notes/known-issues.html
+keywords: netapp, keystone, release notes, known issues
+summary: Known issues identify problems that might prevent you from using Keystone subscription services effectively.
+---
+
+= Known issues in Keystone STaaS
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Known issues identify problems that might prevent you from using Keystone subscription services effectively. 
+
+The following known issues are reported in NetApp Keystone STaaS:
+
+[cols="3*",options="header"]
+|===
+|Known issue |Description |Workaround
+
+a|Incorrect invoice due to data mismatch
+a|A mismatch in consumption data for AutoSupport subscriptions leads to the generation of incorrect invoices, causing billing inaccuracies.
+a|None
+//NSEKEY-13857
+a|Incorrect QoS policy type display
+a|In the *Volume Details* tab, the *QoS Policy Type* column displays _QoS_ when no QoS policy is applied, and the Compliant column shows _Not set_, causing an inconsistency in the displayed QoS policy status.
+a|None
+//NSEKEY-12615
+a|Volume details unavailable for primary and linked subscriptions
+a|The *Volume Summary* tab shows zero for the total number of volumes, QoS compliance status, protected volumes count, and total consumed capacity for primary and linked secondary subscriptions.
+a|None
+//NSEKEY-11333
+|===
+
+
+
+
+

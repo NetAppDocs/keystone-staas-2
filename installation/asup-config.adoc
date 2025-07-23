@@ -1,0 +1,78 @@
+---
+sidebar: sidebar
+permalink: installation/asup-config.html
+keywords: ASUP, AutoSupport configuration
+summary: Configure AutoSupport to incorporate Keystone data in the daily support bundles sent by ONTAP clusters.
+---
+
+= Configure AutoSupport for Keystone
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+When using the AutoSupport telemetry mechanism, Keystone calculates the usage based on the AutoSupport telemetry data. To achieve the necessary level of granularity, you should configure AutoSupport to incorporate Keystone data in the daily support bundles sent by the ONTAP clusters.
+
+.About this task
+
+You should note the following before configuring AutoSupport to include Keystone data.
+
+* You edit the AutoSupport telemetry options by using ONTAP CLI. For information about managing AutoSupport services and system (cluster) administrator role, see https://docs.netapp.com/us-en/ontap/system-admin/manage-autosupport-concept.html[Manage AutoSupport overview^] and https://docs.netapp.com/us-en/ontap/system-admin/cluster-svm-administrators-concept.html[Cluster and SVM administrators^].
+* You include the subsystems in the daily and weekly AutoSupport bundles to ensure precise data collection for Keystone. For information about AutoSupport subsystems, see https://docs.netapp.com/us-en/ontap/system-admin/autosupport-subsystem-collection-reference.html[What AutoSupport subsystems are^].
+
+.Steps
+
+. As a system administrator user, log in to the Keystone ONTAP cluster by using SSH. For information, see https://docs.netapp.com/us-en/ontap/system-admin/access-cluster-ssh-task.html[Access the cluster by using SSH^].
+. Modify the log content.
++
+** Run this command to modify the daily log content:
++
+[source]    
+----
+autosupport trigger modify -node * -autosupport-message management.log -basic-additional wafl,performance,snapshot,platform,object_store_server,san,raid,snapmirror -troubleshooting-additional wafl
+----
++
+** Run this command to modify the weekly log content:
++
+[source]  
+----  
+autosupport trigger modify -autosupport-message weekly -troubleshooting-additional wafl -node *
+----
++
+For more information about this command, see https://docs.netapp.com/us-en/ontap-cli-9131/system-node-autosupport-trigger-modify.html[system node autosupport trigger modify^].
+ 
+//.Example 
+//In this example, when the `autosupport trigger show` command is run, the returned values indicate that daily information is returned for the _wafl_ and _nfs_ subsystems. But the information for the _performance_, _snapshot_, and _platform_ subsystems is missing.
+
+//----
+//_CLUSTER_::> autosupport trigger show -node * -autosupport-message management.log -fields basic-additional
+//node        autosupport-message basic-additional
+//----------- ------------------- --------------------------------------
+//_NODE_01 management.log      wafl,nfs
+//_NODE_02 management.log      wafl,nfs
+
+//----
+
+//You should modify the controllers to include the missing subsystems:
+//`autosupport trigger modify -node * -autosupport-message management.log -basic-additional wafl,nfs,performance,snapshot,platform`
+
+//On rerunning the command, you can see the information for all the required subsystems:
+
+//----
+//_CLUSTER_::> autosupport trigger show -node * -autosupport-message management.log -fields basic-additional
+//node        autosupport-message basic-additional
+//----------- ------------------- --------------------------------------
+//_NODE_01 management.log      wafl,nfs,performance,snapshot,platform
+//_NODE_02 management.log      wafl,nfs,performance,snapshot,platform
+
+//----
+
+// NSEKEY-9000 Feb 2024 (commands changed by Vaughan's request)
+
+// More updates: The step 2 is removed at Serge's request. Here are the details of step 2: Run the following command and verify the existing configuration with respect to the existing subsystems:
+
+//autosupport trigger show -node * -autosupport-message management.log -fields basic-additional
+
+//For more information about this command, see system node autosupport manifest show [https://docs.netapp.com/us-en/ontap-cli-9131/system-node-autosupport-manifest-show.html#parameters]

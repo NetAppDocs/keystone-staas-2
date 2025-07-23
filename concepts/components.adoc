@@ -1,0 +1,62 @@
+---
+sidebar: sidebar
+permalink: concepts/components.html
+keywords: infrastructure component, deployment requirement, installation requirement
+summary: Learn about the components that are required to enable NetApp Keystone STaaS services in your environment.
+---
+
+= Components required for deployment
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Several components are required to enable NetApp Keystone STaaS services in your environment. You should review details about these components before you get started.
+
+== Site requirements
+There are some site-specific requirements, such as space, racks, PDUs, power, and cooling, with additional network and security requirements discussed here.
+
+=== Space
+Floor space to host the Keystone infrastructure equipment (to be provided by customers). NetApp provides the weight specifications based on the final configuration.
+
+=== Racks
+Four post racks in the customer-operated offering (to be provided by customers). In the NetApp-operated offering, either NetApp or the customer can provide the racks, depending on requirements. NetApp provides 42 deep racks.
+
+=== PDUs
+You should provide the power distribution units (PDUs), connected to two separate, protected circuits with sufficient C13 outlets. In the customer-operated offering, in some cases, C19 outlets are required. In the NetApp-operated offering, either NetApp or the customer can provide the PDUs, depending on requirements.
+
+=== Power
+You should provide the required power. NetApp will provide the power requirement specifications based on 200V rating (Typical A, Max A, Typical W, Max W, Power cord type, and quantity), based on the final configuration. All components have redundant power supplies. NetApp will provide the in-cabinet power cords.
+
+=== Cooling
+NetApp can provide the cooling requirement specifications (Typical BTU, Max BTU), based on the final configuration and requirement.
+
+=== Virtual machines
+Virtual machines are required for the deployment of Keystone Collector and ITOM Collector. For installation prerequisites, refer to link:../installation/installation-overview.html[Installation guide for Keystone Collector] and link:../installation/itom-prereqs.html[Installation requirements for ITOM Collector]. The other requirements are shared during deployment.
+
+=== Deployment Options
+Keystone Collector can be deployed through the following methods:
+
+*	VMware OVA template (VMware vCenter Server 6.7 or later is required)
+*	Customer provides a Linux server running on one of the following operating systems: Debian 12, Red Hat Enterprise Linux 8.6 or later 8.x versions, or CentOS 7 (for existing environments only). The Keystone software is installed using the `.deb` or `.rpm` package, depending on the Linux distribution.
+
+ITOM Collector can be deployed through the following methods:
+
+* Customer provides a Linux server running on Debian 12, Ubuntu 20.04 LTS, Red Hat Enterprise Linux (RHEL) 8.x, Amazon Linux 2023, or newer versions.
+* Customer provides a Windows server running Windows Server 2016 or newer versions.
++
+TIP: The recommended operating systems are Debian 12, Windows Server 2016, or newer versions.
+
+=== Networking 
+Outbound access to _keystone.netapp.com_ is required for software updates and usage data uploads, which are essential for the operation and maintenance of the Keystone Collector and AIOps solution gateway.
+
+Depending on customer requirements and the storage controllers used, NetApp can provide 10 GB, 40 GB, and 100 GB connectivity at the customer's site.
+
+NetApp provides the required transceivers for NetApp-provided infrastructure devices only. You should supply transceivers required for customer devices and cabling to the NetApp-provided Keystone infrastructure devices.
+
+== Remote access requirement
+Network connectivity is required between the storage infrastructure installed at the customer data center or customer owned co-located services, and Keystone operations center. The customer is responsible for providing the compute and virtual machines, and the internet services. The customer is also responsible for OS patching (non-OVA based deployments) and security hardening based on internal security policies. The network design should be over a secured protocol and firewall policies will be approved by both NetApp and customers.
+
+NetApp needs to access the hardware and software components installed for monitoring and management to provide services such as monitoring and billing to Keystone customers. The most common method is to establish a virtual private network (VPN) connection to the customer network and access the required data. To overcome any operational complexity perceived by customers to arise from opening firewall ports to new services, the monitoring tools initiate an external connection. NetApp cloud applications, such as ITOM monitoring solution and Zuora, use this connection to perform their respective services. This method meets the customer requirement of not opening firewall ports though providing access to the monitoring components that are part of this service. 
