@@ -25,14 +25,18 @@ Keystone advanced data protection service can synchronously mirror data to a sec
 
 For information about how to view the consumption in a MetroCluster configuration, see link:../integrations/consumption-tab.html#reference-charts-for-advanced-data-protection-for-metrocluster[Reference charts for advanced data protection].
 
-The add-on charges are applicable to all the capacities in the subscription: the source, mirrored copy, and unmirrored data.
+== Pricing and charging
 
-Note the following:
+##The advanced data protection add-on service is priced and charged based on the committed capacity at each site. This helps determine the actual cost of advanced data protection service in $/TiB. The add-on charges apply to all capacities in your subscription, including source data, mirrored copies, and unmirrored data.##
 
-* For this service,	100% of the committed capacity on an associated storage is configured as committed capacity.
-*	Storage is charged for both the source and the destination clusters. This add-on service is also charged for both the primary and secondary (mirrored) volumes.
-*	The charges are applicable only to your file and block storage.
+##For MetroCluster configurations, the usage measurement works differently. Since only half of the storage at each site is actively used while the other half serves as backup, the total usage cost of the advanced data protection service is split across both sites. For example, if you have a MetroCluster setup with 100 TiB of committed capacity at Site A and 100 TiB at Site B, only 100 TiB is actively used across both sites. This means 50 TiB at each site is used for active data, with the remaining 50 TiB at each site serving as mirrored backup. The advanced data protection add-on charges are calculated based on this 100 TiB of actual usage, not the total 200 TiB of physical storage.##
+
+##Note the following:##
+
+* ##The service uses 100% of the committed capacity on associated storage as committed capacity.##
+* ##Charges apply to both primary and secondary sites, covering both source and destination clusters.##
+* ##Charges apply only to your file and block storage services.##
 
 The following MetroCluster scenarios are supported:
 
-image:mcc.png[MetroCluster configurations supported by Keystone]
+image:mcc-1.png[MetroCluster configurations supported by Keystone]
