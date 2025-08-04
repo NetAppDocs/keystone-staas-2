@@ -167,8 +167,7 @@ For the _Advanced Data-Protect_ performance service level, The chart appears lik
 
 image:adp-src-2.png[mcc primary base]
 
-##The displayed consumption of 94.21 TiB represents the usage for the primary subscription. Given that advanced data protection splits consumption between partner sites with separate subscriptions, this chart shows only the primary site usage. To learn about sizing and pricing for the advanced data protection add-on service, refer to link:../concepts/adp.html#understand-sizing-and-pricing[Understand sizing and charging].##
-
+//##The displayed consumption of 94.21 TiB represents the usage for the primary subscription. Given that advanced data protection splits consumption between partner sites with separate subscriptions, this chart shows only the primary site usage. To learn about sizing and pricing for the advanced data protection add-on service, refer to link:../concepts/adp.html#understand-sizing-and-pricing[Understand sizing and charging].##
 .What you can see for the secondary (mirror site) subscription
 
 When you check the secondary subscription, you can see that the bar chart for the _Performance_ performance service level (base performance service level) at the same data collection point as the partner site is reversed, and the consumption breakup at the primary and mirror sites is 93.38 TiB and 95.04 TiB respectively.
