@@ -1,0 +1,44 @@
+---
+sidebar: sidebar
+permalink: installation/linux-prereqs.html
+keywords: prerequisites, Linux
+summary: Prepare your Linux system with the required software before you install Keystone Collector.
+---
+
+= Linux system requirements
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Preparing your Linux system with the required software ensures precise installation and data collection by Keystone Collector. 
+
+Ensure that your Linux and Keystone Collector server VM have these configurations.
+
+.Linux server: 
+
+* Operating system: Any one of the following:
+    ** Debian 12
+    ** Red Hat Enterprise Linux 8.6 or later 8.x versions
+    ** CentOS 7 (for existing environments only)
+* Chronyd time synchronized
+* Access to the standard Linux software repositories
+
+The same server should also have the following third-party packages:
+
+*	podman (POD Manager)
+*	sos
+*	chrony 
+*	python 3 (3.6.8 to 3.9.13)
+
+.Keystone Collector server VM:
+
+*	Core: 2 CPUs
+*	RAM: 4 GB RAM
+*	Disk space: 50 GB vDisk
+
+include::../_include/generic-prereqs.adoc[]
+
+
