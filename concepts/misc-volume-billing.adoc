@@ -13,7 +13,7 @@ summary: Learn about Keystone billing for specific configurations, including clo
 :imagesdir: ../media/
 
 [.lead]
-Understanding Keystone billing for specific configurations in version 3 (v3) can help you optimize service usage and manage costs. The configurations include cloned volumes, advanced data protection, temporary volumes, SnapMirror destinations, LUNs, and system/root volumes.
+Understanding Keystone billing for specific configurations can help you optimize service usage and manage costs. The configurations include cloned volumes, advanced data protection, temporary volumes, QoS policies, SnapMirror destinations, LUNs, and system/root volumes.
 
 == Billing for cloned volumes
 If volumes are cloned in ONTAP and you use them for backing up and restoring your data, you can continue using the clones without any additional payments. However, cloned volumes used for any other purpose in your business for an extensive duration are charged.
@@ -27,6 +27,7 @@ Note the following:
 == Billing for advanced data protection
 Advanced data protection uses NetApp MetroCluster to mirror data between two physically separated clusters. For MetroCluster mirrored aggregates, data is written twice, once on each cluster. The Keystone service charges for consumption on each side independently, resulting in two identical consumption records. The add-on charges are applied on all the capacities in the subscription, irrespective of whether the data is at the source, or it is mirrored or unmirrored data.
 
+//##For MetroCluster configurations, the usage measurement works differently. Given that only half of the storage at each site is actively used while the other half serves as backup, the total usage of the advanced data protection service is split across both sites. For example, if you have a MetroCluster setup with 100 TiB of committed capacity at Site A and 100 TiB at Site B, only 100 TiB is actively used across both sites. This means 50 TiB at each site is used for active data, with the remaining 50 TiB at each site serving as mirrored backup. The advanced data protection add-on charges are calculated based on this 100 TiB of actual usage, not the total 200 TiB of physical storage.##
 If you monitor your clusters through ONTAP System Manager (System Manager) or Active IQ Unified Manager (Unified Manager), you might see a discrepancy between the consumption reported on these tools and Keystone. System Manager and Unified Manager do not report volumes on the mirrored (remote) cluster, and in doing so, reports half the consumption metrics that the Keystone service reports.
 
 .Example:
@@ -37,14 +38,9 @@ Additionally, all volumes created on a Keystone system with advanced data protec
 == Billing for temporary volumes
 Occasionally, temporary (TMP) volumes are created by ONTAP when moving volumes. These temporary volumes are short-lived, and the consumption on these volumes is not measured for billing.
 
-== Billing for SnapMirror destinations
-The pricing for SnapMirror destination volumes, whether used for disaster recovery or long-term retention, is based on the performance service level assigned to the destination. There is no extra fee for data protection.
-
-== Billing for LUNs
-For LUNs, the billing is based on the performance service levels of the volume.
-
-== System and root volumes
-System and root volumes are monitored as a part of the overall monitoring of the Keystone service but are not counted or billed. The consumption on these volumes is exempted for billing.
+== Billing and adaptive QoS policies
+Keystone measures consumption based on service levels. Each service level is associated with a specific adaptive quality of service (QoS) policy. During deployment, you will be informed of the details of each adaptive QoS policy for your subscribed Keystone services. During storage management operations, ensure that your volumes have the appropriate adaptive QoS policies assigned as per your subscribed service levels to avoid unexpected billing.
+For more information about adaptive QoS policies in ONTAP, see link:https://docs.netapp.com/us-en/ontap/performance-admin/guarantee-throughput-qos-task.html[Guarantee throughput with QoS overview^].
 
 == Billing for SnapMirror destinations
 The pricing for the SnapMirror destination volume is governed by the adaptive QoS policy for the service level assigned on the source. However, if the source does not have an associated adaptive QoS policy, the destination is billed based on the lowest available service level.
