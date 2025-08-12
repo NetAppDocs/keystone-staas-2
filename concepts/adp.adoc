@@ -25,16 +25,16 @@ Keystone advanced data protection service can synchronously mirror data to a sec
 
 For information about how to view the consumption in a MetroCluster configuration, see link:../integrations/consumption-tab.html#reference-charts-for-advanced-data-protection-for-metrocluster[Reference charts for advanced data protection].
 
-The add-on charges apply to all capacities in your subscription, including source data, mirrored copies, and unmirrored data.
+== Understand pricing
+The advanced data protection add-on service is priced based on the committed capacity at each site. This helps determine the actual cost of advanced data protection service in $/TiB. The add-on charges apply to all capacities in your subscription, including source data, mirrored copies, and unmirrored data.
+
+For MetroCluster configuration, each site requires its own subscription, and you are charged for the committed capacity at each site independently. To learn about billing, refer to link:../concepts/misc-volume-billing.html#billing-for-advanced-data-protection[Billing for advanced data protection].
 
 Note the following:
 
 * The service uses 100% of the committed capacity on associated storage as committed capacity.
 * Charges apply to both primary and secondary sites, covering both source and destination clusters.
 * Charges apply only to your file and block storage services.
-
-//== Understand sizing and pricing
-//##The advanced data protection add-on service is priced and charged based on the committed capacity at each site. This helps determine the actual cost of advanced data protection service in $/TiB. The add-on charges apply to all capacities in your subscription, including source data, mirrored copies, and unmirrored data. To learn about billing, refer to link:../concepts/misc-volume-billing.html#billing-for-advanced-data-protection[Billing for advanced data protection].##
 
 The following MetroCluster scenarios are supported:
 
