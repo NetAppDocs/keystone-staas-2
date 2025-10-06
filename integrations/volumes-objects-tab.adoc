@@ -15,7 +15,7 @@ summary: View capacity details at the volume or object storage level.
 [.lead]
 If you want to view capacity details at the volume or object storage level, you can navigate to the *Volumes & Objects* tab in Digital Advisor. For StorageGRID, you can use this tab to read the usage by the individual nodes in your object storage environment. 
 
-You can refer to the *Assets* tab in BlueXP to view these details. To view the details for a specific Keystone STaaS subscription, refer to link:../integrations/assets-tab.html[View assets associated with a Keystone subscription]. If you want to view details across multiple Keystone subscriptions, refer to link:../integrations/assets.html[View assets across your Keystone subscriptions].
+You can refer to the *Assets* page in the NetApp Console to view these details. To view the details for a specific Keystone STaaS subscription, refer to link:../integrations/assets-tab.html[View assets associated with a Keystone subscription]. If you want to view details across multiple Keystone subscriptions, refer to link:../integrations/assets.html[View assets across your Keystone subscriptions].
 
 [NOTE]
 The title of this tab varies with the nature of deployment at your site. If you have both ONTAP and object storage, the title of the tab appears as *Volumes & Objects*. For only ONTAP, the name appears *Volumes*. For StorageGRID object storage, you can see the *Objects* tab.
@@ -32,7 +32,7 @@ The *Volumes & Objects* tab offers insights into ONTAP system volumes and object
 +
 For the selected Keystone STaaS subscription, you can see the total number of volumes, their QoS compliance status, count of protected volumes, and the total committed, consumed, and available capacity in all those volumes. If you click the number of non-compliant or protected volumes, it takes you to the *Volume Details* tab, where you can view a filtered list showing either the non-compliant volumes or the protected volumes, based on your selection.
 +
-image:volume-summary-2.png[Volume summary tab]
+image:volume-summary-3.png[Volume summary tab]
 
 --
 
@@ -50,7 +50,7 @@ You can use *Hide/Show Columns*  to add or remove columns displayed in the table
 +
 NOTE: For advanced data protection add-on service, an additional column appears to indicate whether the volume is a primary or mirror volume in the MetroCluster configuration. You can copy individual node serial numbers by clicking the *Copy Node Serials* button.
 +
-image:volume-details-3.png[Volumes details tab]
+image:volume-details-4.png[Volumes details tab]
 
 --
 
