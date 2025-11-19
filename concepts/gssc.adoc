@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: concepts/gssc.html
+permalink: concepts/support-services.html
 keywords:  Keystone support, service request, support ticket
 summary: If you need help, contact the NetApp Keystone support team.
 ---
