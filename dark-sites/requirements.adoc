@@ -24,7 +24,6 @@ Before installing Keystone Collector in an environment without internet access, 
 
 == Requirements for Linux
 
-* Operating system: Debian 12, or Red Hat Enterprise Linux (RHEL) 8.6, or later versions within the RHEL 8.x series
 * Operating system (choose one):
 ** Red Hat Enterprise Linux (RHEL) 8.6 or any later 8.x series
 ** Red Hat Enterprise Linux 9.0 or later versions
