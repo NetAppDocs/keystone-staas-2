@@ -1,5 +1,5 @@
 ---
 permalink: integrations/capacity-trend-tab.html
-redirect: keystone-staas/integrations/consumption-tab.html
+redirect: keystone-staas-2/integrations/consumption-tab.html
 ---
 

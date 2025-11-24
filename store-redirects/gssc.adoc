@@ -1,0 +1,4 @@
+---
+permalink: concepts/gssc.html
+redirect: keystone-staas-2/concepts/support-services.html
+---
