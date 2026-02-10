@@ -117,6 +117,8 @@ sidebar:
               url: /integrations/consumption-tab.html
             - title: View your subscription timeline
               url: /integrations/subscription-timeline.html
+            - title: View MetroCluster subscriptions consumption and health 
+              url: /integrations/adp-tab.html
         - title: View assets
           entries:
             - title: View assets associated with a subscription
