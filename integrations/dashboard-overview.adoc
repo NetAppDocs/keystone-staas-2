@@ -70,9 +70,6 @@ a|link:../integrations/assets-tab.html[View assets associated with a Keystone su
 a|link:../integrations/monitoring-alerts.html[View and manage alerts and monitors]
 |Yes
 |No
-a|link:../integrations/modify-subscription.html[Modify your subscriptions] (only for Keystone administrators)
-|Yes
-|No
 a|link:../integrations/options.html#generate-reports-from-netapp-console-or-digital-advisor[Generate reports]
 |Yes
 |Yes
