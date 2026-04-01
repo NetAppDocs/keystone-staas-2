@@ -41,13 +41,21 @@ The historical consumption data for each performance service level is displayed 
 NOTE: You can select *Accrued burst* from the *View* dropdown if you want to view the historical burst usage data for which invoices have been generated. You can use this data to analyze the billed usage reflected in your invoice. To learn more, refer to link:../integrations/consumption-tab.html#view-accrued-burst[View accrued burst].
 +
 NOTE: If you have subscribed to add-on services such as advanced data protection (ADP) or Data Infrastructure Insights (DII), the consumption data for these services appears alongside your base performance service levels in both historical consumption and accrued burst views. To learn more about add-on services, refer to link:../concepts/adp.html[Learn about add-on services].
+image:consumption-trend-burst.png[screenshot displaying historical consumption]  
 +
-image:bxp-consumption-trend.png[screenshot displaying historical consumption]  
+The line graph displays historical consumption data and allows users to analyze trends over a selected date range. The graph shows the following metrics:
 +
-The line graph displays historical consumption data and allows users to analyze trends over a selected date range. The graph shows metrics such as data (storage capacity used by user data), snapshot (storage capacity used by snapshot data), and used capacity (total storage capacity, including both data and snapshot data), along with committed and burst capacity. The date and time of each data point are displayed at the bottom of the graph. Based on the date range of your query, the usage charts show up to 30 data collection points. You can hover your mouse cursor over the graph to view the usage breakdown at each data collection point.
+** *Used capacity*: Total storage in use, including both data and snapshot capacity.
+** *Data*: Storage capacity used by user data.
+** *Snapshot*: Storage capacity used by snapshot data.
+** *Committed*: The contracted committed capacity.
+** *Burst capacity*: The maximum allowed burst limit for your subscription.
+** *Above burst capacity*: Storage consumption beyond the burst limit. This metric appears only when the burst limit is exceeded.
++
+Based on the date range of your query, the usage charts show up to 30 data collection points. You can hover your mouse cursor over the graph to view the usage breakdown at each data collection point. 
 +
 NOTE: The date range you select determines the level of detail shown at the bottom of the graph. For periods of 30 days or fewer, both the date and time are displayed for each data point. For periods greater than 30 days, only the date is displayed.
-
++
 You can also view a summary of current consumption alongside historical consumption to get a clear understanding of your usage.
 --
 
@@ -103,6 +111,18 @@ You can click the toggle button *Show Current Usage* to view the consumption, bu
 * *Accrued Burst*: Indicator of the total burst capacity (in TiB) accumulated during each 2-minute interval within a month for the current billing cycle.
 --
 ====
+
+== View forecast data
+
+You can view projected capacity usage for the next 120 days from the current date through the *Forecast* toggle available in the *Historical consumption* view of the *Consumption trend* tab in the Console. The toggle is enabled by default.
+
+By default, the graph displays the last 30 days of historical consumption and a 120-day projection from the current date on the same chart. Up to 30 data points are plotted in total (20 for historical data and 10 for forecast data), with a vertical line separating the two segments.
+
+image:forecast-1.png[screenshot showing forecast data]
+
+If you select a date range that does not end on the current date, the forecast is automatically disabled. To re-enable it, a confirmation dialog informs you that forecast data is only available when the selected timeline ends with the current date. Confirming resets the view to the default range of the last 30 days of historical data plus the next 120 days of forecast.
+
+If projected consumption is expected to exceed the burst capacity, an alert indicator appears on the graph, recommending a capacity upgrade.
 
 == Accrued burst computation
 The accrued burst usage for an entire month is calculated as this:
