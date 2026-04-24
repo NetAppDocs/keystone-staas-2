@@ -53,4 +53,4 @@ image:alert-aiq-3.png[alert]
 
 For information about AQoS policies, see link:../concepts/qos.html[Adaptive QoS].
 
-Contact NetApp Keystone support for more information on these messages. For information about raising service requests, see link:../concepts/support-services.html#generating-service-requests[Generating service requests].
+Contact NetApp Keystone support for more information on these messages. For information about raising service requests, see link:../concepts/support-services.html[Generating service requests].
