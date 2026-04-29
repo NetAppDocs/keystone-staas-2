@@ -43,6 +43,7 @@ NOTE: You can select *Accrued burst* from the *View* dropdown if you want to vie
 NOTE: You can use the *Forecast* toggle to view projected capacity usage in the *Historical consumption* view and projected accrued burst in the *Accrued burst* view. To learn more, refer to link:../integrations/consumption-tab.html#view-forecast-data[View forecast data].
 +
 NOTE: If you have subscribed to add-on services such as advanced data protection (ADP) or Data Infrastructure Insights (DII), the consumption data for these services appears alongside your base performance service levels in both historical consumption and accrued burst views. To learn more about add-on services, refer to link:../concepts/adp.html[Learn about add-on services].
++
 image:consumption-trend-burst.png[screenshot displaying historical consumption]  
 +
 The line graph displays historical consumption data and allows users to analyze trends over a selected date range. The graph shows the following metrics:
