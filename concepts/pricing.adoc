@@ -86,6 +86,5 @@ NOTE: For quarterly, semi-annual, and annual billing, if your committed capacity
 == Related information
 
 * link:../concepts/supported-storage-capacity.html[Storage capacity types in Keystone]
-* link:../concepts/burst-capacity.html[Burst capacity options]
 * link:../integrations/current-usage-tab.html[View your current consumption details]
 * link:../integrations/consumption-tab.html[View consumption trends of your Keystone subscriptions]
