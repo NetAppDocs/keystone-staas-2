@@ -80,7 +80,7 @@ Your billing frequency is set in your Keystone agreement. The following table sh
 |Sent at the end of each quarter
 |===
 
-NOTE: For quarterly, semi-annual, and annual billing, if your committed capacity changes during a subscription, an invoice is sent on the same day for the prorated minimum payments for the rest of that subscription year. Billing is calculated from the day the committed capacity change becomes effective.
+NOTE: For annual billing, if your committed capacity changes during a subscription, an invoice is sent on the same day for the prorated minimum payments for the rest of that subscription year. Billing is calculated from the day the committed capacity change becomes effective.
 
 
 == Related information
