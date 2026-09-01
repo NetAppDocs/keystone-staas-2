@@ -5,7 +5,7 @@ keywords: metrics, GiB, IOPS, latency, durability, v2, version 2
 summary: The NetApp Keystone STaaS service uses several terms to measure metrics. You might want to learn more about these terms as you use Keystone for version 2 of the service.
 ---
 
-= Metrics and definitions used in Keystone
+= Keystone STaaS storage metrics and definitions 
 :hardbreaks:
 :nofooter:
 :icons: font
