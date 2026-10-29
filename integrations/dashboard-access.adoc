@@ -13,7 +13,7 @@ summary: As a NetApp Keystone STaaS subscriber, you can get access the Keystone 
 :imagesdir: ../media/
 
 [.lead]
-You can access the Keystone dashboard through the NetApp Console or Digital Advisor after subscribing to NetApp Keystone services.
+You can access the Keystone dashboard for your Keystone STaaS subscription through NetApp Console or Digital Advisor.
 
 [role="tabbed-block"]
 ====
