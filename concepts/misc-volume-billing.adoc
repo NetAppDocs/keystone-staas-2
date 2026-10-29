@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: concepts/misc-volume-billing.html
 keywords: Billing and miscellaneous scenarios
-summary: Learn about Keystone billing for specific configurations, including cloned volumes, advanced data protection, and more.
+summary: Keystone STaaS billing rules differ for certain volume configurations. This page explains billing for cloned volumes, SnapMirror destinations, LUNs, temporary volumes, and system volumes.
 ---
 
-= Keystone billing for specific volume types
+= Keystone STaaS billing for specific volume types
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Learn about Keystone billing for specific configurations, including clo
 :imagesdir: ../media/
 
 [.lead]
-Understanding Keystone billing for specific configurations can help you optimize service usage and manage costs. The configurations include cloned volumes, advanced data protection, temporary volumes, QoS policies, SnapMirror destinations, LUNs, and system/root volumes.
+Keystone STaaS billing rules differ for certain volume configurations. Knowing these exceptions helps you avoid unexpected charges when working with cloned volumes, SnapMirror destinations, LUNs, or temporary storage.
 
 == Billing for cloned volumes
 If volumes are cloned in ONTAP and you use them for backing up and restoring your data, you can continue using the clones without any additional payments. However, cloned volumes used for any other purpose in your business for an extensive duration are charged.
@@ -23,18 +23,6 @@ Note the following:
 * Clone volumes are free from charging as long as their size is less than 10% of the parent volume (the physical capacity used in the clone volume compared to the physical capacity used in the parent volume).
 * There is no 24-hour grace period for cloned volumes. Only the size of the clone is considered.
 * Once the clone volume exceeds 10% of the physical size of the parent, the clone is billed as a standard volume (logical used capacity).
-
-== Billing for advanced data protection
-Advanced data protection uses NetApp MetroCluster to mirror data between two physically separated clusters. For MetroCluster mirrored aggregates, data is written twice, once on each cluster. The Keystone service charges for consumption on each side independently, resulting in two identical consumption records. The add-on charges are applied on all the capacities in the subscription, irrespective of whether the data is at the source, or it is mirrored or unmirrored data.
-
-Each MetroCluster site has its own subscription and billing. For MetroCluster configurations, the usage measurement accounts for how the storage is utilized across both sites. If you have a MetroCluster setup with 100 TiB per site, only 50 TiB is used actively on each site, with the remaining 50 TiB at each site serving as mirrored backup. The advanced data protection add-on charges are calculated based on this 100 TiB of total active usage and split across both sites through their respective subscriptions at 50 TiB each.
-
-If you monitor your clusters through ONTAP System Manager (System Manager) or Active IQ Unified Manager (Unified Manager), you might see a discrepancy between the consumption reported on these tools and Keystone. System Manager and Unified Manager do not report volumes on the mirrored (remote) cluster, and in doing so, reports half the consumption metrics that the Keystone service reports.
-
-.Example:
-Site A and Site B are set up in a MetroCluster configuration. When a user creates a volume of 10 TB in site A, an identical volume of 10 TB is created in site B. Keystone identifies 10 TB of consumption in each site, for a total increase of 20 TB. System Manager and Unified Manager report a 10 TB volume created in site A, but do not report a 10 TB volume in Site B.
-
-Additionally, all volumes created on a Keystone system with advanced data protection will be counted towards the consumption of advanced data protection, regardless of whether those volumes are mirrored or not.
 
 == Billing for temporary volumes
 Occasionally, temporary (TMP) volumes are created by ONTAP when moving volumes. These temporary volumes are short-lived, and the consumption on these volumes is not measured for billing.
